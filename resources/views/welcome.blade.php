@@ -15,7 +15,8 @@
                     @endauth
                 </div>
             @endif
-                
+
+            
                 <div class="content">
                <p> <img src="usLogo.png" style="width:10%;height:10%"></p>
                     <div class="title m-b-md">

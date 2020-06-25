@@ -124,6 +124,7 @@
 	filter: blur(0);
 	
 }
+
 .img_section6 figure img{
 	filter: grayscale(0) blur(0);
 	transition: .3s ease-in-out;

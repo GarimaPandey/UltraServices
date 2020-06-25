@@ -15,7 +15,6 @@
                     @endauth
                 </div>
             @endif
-                
         <div class="content">
           <h1>Welcome to users page</h1>
         </div>

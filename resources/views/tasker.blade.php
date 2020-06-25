@@ -15,8 +15,7 @@
                         <a href="{{ route('register') }}"><b>Register</b></a>
                     @endauth
                 </div>
-            @endif
-                
+            @endif     
         <div class="content">
           <h1>Welcome to taskers page</h1>
         </div>

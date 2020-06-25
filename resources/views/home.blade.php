@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
        <div class="hp">
+       
 @include('layouts.header')
     <body>
         <div class="flex-center position-ref full-height">
