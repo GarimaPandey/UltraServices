@@ -80,6 +80,7 @@ class HomeController extends Controller
 
     public function upload_task(Request $request)
     {
+        
         if($file = $request->file('file'))
         { 
             $name = $file->getClientOriginalName();
