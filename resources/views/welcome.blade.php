@@ -8,7 +8,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}"><b>Home</b></a>
+                        <a href="{{ url('/welcome') }}"><b>Home</b></a>
                     @else
                         <a href="{{ route('login') }}"><b>Login</b></a>
                         <a href="{{ route('register') }}"><b>Register</b></a>
@@ -16,7 +16,7 @@
                 </div>
             @endif
 
-            
+
                 <div class="content">
                <p> <img src="usLogo.png" style="width:10%;height:10%"></p>
                     <div class="title m-b-md">

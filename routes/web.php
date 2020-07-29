@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\UploadedFile;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +20,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/order', function(){
+
+    $results = \App\Order::all();
+    return $order;
+});
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/user', 'HomeController@user')->name('user');
+Route::post('/save_user', 'HomeController@save_user');
 Route::get('/tasker', 'HomeController@tasker')->name('tasker');
+Route::get('/task', 'HomeController@task')->name('task');
+Route::post('/upload_task','HomeController@upload_task');
+Route::get('/admin', 'HomeController@admin');
+
