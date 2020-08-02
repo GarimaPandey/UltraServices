@@ -47,7 +47,7 @@ class HomeController extends Controller
         return view('tasker');
     }
 
-    public function task()
+    public function GetTask()
     {
         $data = DB::table('tasks')->get();
         return view('task',compact('data'));
@@ -80,7 +80,7 @@ class HomeController extends Controller
 
     public function upload_task(Request $request)
     {
-        
+
         if($file = $request->file('file'))
         { 
             $name = $file->getClientOriginalName();
@@ -92,7 +92,9 @@ class HomeController extends Controller
                 $task->description = $request->task_description;
                 $task->save();
 
-                $data = DB::table('task')->get();
+
+                $data = Task::all()->toArray();
+               
                 return view('task', compact('data'))->with('success','your details are saved succesfully');
             }
         }

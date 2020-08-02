@@ -29,11 +29,15 @@
         <input name="task_name" type="text" class="form-control" id="task_name" placeholder="taskname" required>    
     </div>
     
-    <div class="form-group">
+    <!-- <div class="form-group">
         <label for="task_description">Task Description:</label>
         <input name="task_description" type="text" class="form-control" id="task_description" placeholder="task_decription" required>    
-    </div>
+    </div> -->
     
+    <div class="form-group purple-border">
+        <label for="task_description">Task Description:</label>
+        <textarea class="form-control" name="task_description"rows="3"></textarea>
+    </div>
 
     <div class="form-group">
         <label for="task">Task:</label>
@@ -53,4 +57,3 @@
 </html>
 
 
-</html>
