@@ -31,5 +31,6 @@ Route::post('/save_user', 'HomeController@save_user');
 Route::get('/tasker', 'HomeController@tasker')->name('tasker');
 Route::get('/task', 'HomeController@task')->name('task');
 Route::post('/upload_task','HomeController@upload_task');
+Route::post('/edit_task','HomeController@edit_task');
 Route::get('/admin', 'HomeController@admin');
 

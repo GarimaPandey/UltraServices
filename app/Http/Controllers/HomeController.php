@@ -47,13 +47,19 @@ class HomeController extends Controller
         return view('tasker');
     }
 
+    public function task()
+    {
+        $data = Task::all()->toArray();
+        return view('task',compact('data'));
+    }
+
     public function GetTask()
     {
         $data = DB::table('tasks')->get();
         return view('task',compact('data'));
     }
 
-
+   
     public function save_user(Request $request)
     {
         $user = Auth::user();
@@ -99,6 +105,30 @@ class HomeController extends Controller
             }
         }
     }
+
+    public function edit_task(Request $request)
+    {
+        dd($request);
+        $task = Task::where('id', $request->id)->first();
+        if (is_null($task)) {
+            return false;
+        }
+    if($file = $request->file('file'))
+    { 
+        $name = $file->getClientOriginalName();
+        if($file->move('images',$name));
+        {
+            Task::where('id',$request->id)->update(array('task_name' => $request->task_name,'image' => $name, 'description' => $request->task_description ));
+        }
+    }
+    $data = Task::all()->toArray();
+    return view('task',compact('data'))->with('success','your details are edited succesfully');
+    }
+
+
+
+
+
 }
 
 
