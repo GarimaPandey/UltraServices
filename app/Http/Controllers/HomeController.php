@@ -107,27 +107,26 @@ class HomeController extends Controller
     }
 
     public function edit_task(Request $request)
-    {
-        dd($request);
-        $task = Task::where('id', $request->id)->first();
-        if (is_null($task)) {
-            return false;
-        }
-    if($file = $request->file('file'))
-    { 
-        $name = $file->getClientOriginalName();
-        if($file->move('images',$name));
         {
-            Task::where('id',$request->id)->update(array('task_name' => $request->task_name,'image' => $name, 'description' => $request->task_description ));
+            $task = Task::where('id', $request->id)->first();
+            if($file = $request->file('file'))
+            { 
+                $name = $file->getClientOriginalName();
+                if($file->move('images',$name))
+                {
+                    Task::where('id',$request->task_id)->update(array('task_name' => $request->task_name,'image' => $name, 'description' => $request->task_description ));
+                }
+            }
+                $data = Task::all()->toArray();
+                return view('task',compact('data'))->with('success','your details are edited succesfully');
         }
+
+    public function delete_task(Request $request)
+    {
+        Task::where('id', $request->delete_task_id)->delete();
+        $data = Task::all()->toArray();
+        return view('task',compact('data'))->with('success','your details are deleted succesfully');
     }
-    $data = Task::all()->toArray();
-    return view('task',compact('data'))->with('success','your details are edited succesfully');
-    }
-
-
-
-
 
 }
 
