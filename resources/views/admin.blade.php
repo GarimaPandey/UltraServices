@@ -32,7 +32,7 @@
     
     <div class="form-group purple-border">
         <label for="task_description">Task Description:</label>
-        <textarea class="form-control" name="task_description"rows="3"></textarea>
+        <textarea class="ckeditor form-control" name="task_description"rows="3"></textarea>
     </div>
 
     <div class="form-group">

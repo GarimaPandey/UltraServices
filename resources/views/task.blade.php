@@ -53,7 +53,8 @@
 
                                     <div class="form-group purple-border">
                                       <label for="task_description">Task Description:</label>
-                                      <textarea class="form-control" id="task_description" name="task_description"rows="3"></textarea>
+
+                                      <textarea class="ckeditor form-control"  id="task_description" name="task_description"rows="3"></textarea>
                                     </div>
 
                                       <div class="form-group">
@@ -127,6 +128,9 @@
 
 </body>
 <script >
+ $(document).ready(function() {
+       $('.ckeditor').ckeditor();
+    });
 $('#my-modal').on('show.bs.modal', function (event) {
   var myVal = $(event.relatedTarget).data('val');
   $('#task_id').val(myVal);
@@ -137,6 +141,8 @@ $('#delete-modal').on('show.bs.modal', function (event) {
   $('#delete_task_id').val(newVal);
 });
 
+
+  
 </script>
 
 
