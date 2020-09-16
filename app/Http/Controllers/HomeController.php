@@ -141,13 +141,14 @@ class HomeController extends Controller
 
     public function edit_task(Request $request)
         {
+            $hourly_rate=$request->hourly_rate;
             $task = Task::where('id', $request->id)->first();
             if($file = $request->file('file'))
             { 
                 $name = $file->getClientOriginalName();
                 if($file->move('images',$name))
                 {
-                    Task::where('id',$request->task_id)->update(array('task_name' => $request->task_name,'image' => $name, 'description' => $request->task_description ));
+                    Task::where('id',$request->task_id)->update(array('task_name' => $request->task_name,'image' => $name, 'hourly_rate' => $hourly_rate, 'description' => $request->task_description ));
                 }
             }
                 $data = Task::all()->toArray();

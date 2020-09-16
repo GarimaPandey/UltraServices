@@ -56,6 +56,11 @@
                                       <textarea class="form-control" id="task_description" name="task_description"rows="3"></textarea>
                                     </div>
 
+                                      <div class="form-group">
+                                        <label for="hourly_rate">Hourly Rate for the task</label>
+                                        <input type="text" id="hourly_rate" name="hourly_rate"  class="form-control"/>
+                                    </div>
+
                                     <div class="form-group">
                                         <label for="task">Task:</label>
                                         <input type="file" id="task_file_name" name="file" class="form-control"/>
