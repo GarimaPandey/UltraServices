@@ -28,11 +28,7 @@
         <label for="task_name">Task Name:</label>
         <input name="task_name" type="text" class="form-control" id="task_name" placeholder="taskname" required>    
     </div>
-    
-    <!-- <div class="form-group">
-        <label for="task_description">Task Description:</label>
-        <input name="task_description" type="text" class="form-control" id="task_description" placeholder="task_decription" required>    
-    </div> -->
+
     
     <div class="form-group purple-border">
         <label for="task_description">Task Description:</label>
@@ -42,6 +38,11 @@
     <div class="form-group">
         <label for="task">Task:</label>
         <input type="file" name="file" class="form-control"/>
+    </div>
+
+     <div class="form-group">
+        <label for="hourly_rate">Hourly Rate for the Task:</label>
+        <input type="integer" name="hourly_rate" class="form-control"/>
     </div>
 
      <div class="form-group row">

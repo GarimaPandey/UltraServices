@@ -33,5 +33,9 @@ Route::get('/task', 'HomeController@task')->name('task');
 Route::post('/upload_task','HomeController@upload_task');
 Route::post('/edit_task','HomeController@edit_task');
 Route::post('/delete','HomeController@delete_task');
-Route::get('/admin', 'HomeController@admin');
+Route::post('/addTasker','HomeController@add_tasker');
+$router->get('/taskDetail/{id}',[
+    'uses' => 'HomeController@detail',
+    'as'   => 'detail'
+]);Route::get('/admin', 'HomeController@admin');
 

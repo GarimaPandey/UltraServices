@@ -23,14 +23,11 @@
     </div>
 @endif
 
-
-
-
      <div class="well">  
         <div class="content">
         <div class="container" >
-  <h1>Users Detail</h1>
-  <form method="post" action="/save_user" enctype="multipart/form-data">
+        <h1>Users Detail</h1>
+        <form method="post" action="/save_user" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="form-group row">
             <label for="name" class="col-sm-3 col-form-label">Name</label>

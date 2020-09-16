@@ -17,76 +17,69 @@
             @endif
             <div class="well">  
         <div class="content">
-        <div class="container">
-  <h2>Tasker's Detail</h2>
-  <form class="form-horizontal" action="/action_page.php">
-   <div class="row">
-    <div class="form-group">
-      <label class="control-label col-md-10" for="name">Name:</label>
-      <div class="col-md-10">
-        <input type="name" class="form-control" id="name" placeholder="Enter Name" name="name">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-md-10" for="profession">Profession:</label>
-      <div class="col-md-10">          
-        <input type="profession" class="form-control" id="profession" placeholder="Enter Profession" name="profession">
-      </div>
-    </div>
-    </div>
-    <div class="row">
-    <div class="form-group">
-      <label class="control-label col-md-10" for="contact">Contact No:</label>
-      <div class="col-md-10">
-        <input type="contact" class="form-control" id="contact" placeholder="Enter contact" name="contact">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-md-10" for="pwd">Adhar Card No:</label>
-      <div class="col-md-10">          
-        <input type="adhar_card_no" class="form-control" id="adhar_card_no" placeholder="Enter adhar_card_no" name="adhar_card_no">
-      </div>
-      </div>
-      </div>
-      <div class="row">
-     <div class="form-group">
-      <label class="control-label col-md-10" for="email">Date of Birth:</label>
-      <div class="col-md-10">
-        <input type="dob" class="form-control" id="dob" placeholder="Enter dob" name="dob">
-      </div>
-      </div>
-    <div class="form-group">
-      <label class="control-label col-md-10" for="exp">Total Experience:</label>
-      <div class="col-md-10">          
-        <input type="experience" class="form-control" id="experience" placeholder="Enter experience" name="experience">
-      </div>
-    </div>
-    </div>
-    <div class="row">
-    <div class="form-group">
-      <label class="control-label col-md-10" for="vehicle_name_and_number">Vehicle Name and Number</label>
-      <div class="col-md-10">          
-        <input type="vehicle_number_name" class="form-control" id="vehicle_name_and_number" placeholder="Enter vehicle number and name" name="vehicle_number_name">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-md-10" for="date_&_time">Date and Time</label>
-      <div class="col-md-10">          
-        <input type="date_and_time" class="form-control" id="date_and_time" placeholder="Enter date and time" name="date_and_time">
-      </div>
-    </div>
+        <h2>Tasker's Detail</h2>
 
-    </div>
-    <div class="form-group">        
-      <div class="col-sm-offset-2 col-md-10">
-        <button type="submit" class="btn btn-default">Submit</button>
-      </div>
-    </div>
+        <div class="container">
+<form method="post" action="{{url('/addTasker')}}" enctype="multipart/form-data">
+{{ csrf_field() }}
+        <div class="row">
+                  <div class="form-group">
+                    <label for="name">Name:</label>
+                    <div class="col-md-10">          
+                    <input name="name" type="text" class="form-control" id="name"  placeholder="Name" required> 
+                    </div>   
+                  </div>
+                  <div class="form-group">
+                      <label for="profession">Profession:</label>
+                      <div class="col-md-10">          
+                      <input name="profession" type="text" class="form-control" id="profession"  placeholder="Profession" required>   
+                      </div> 
+                  </div>
+                  <div class="form-group">
+                    <label for="contact_no">Contact no</label>
+                    <div class="col-md-10">          
+                    <input name="contact_no" type="text" class="form-control" id="contact_no"  placeholder="Contact no" required> 
+                    </div>   
+                  </div>
+                  <div class="form-group">
+                    <label for="aadhar_card_no">Adhar Card No:</label>
+                    <div class="col-md-10">          
+                    <input name="aadhar_card_no" type="text" class="form-control" id="aadhar_card_no" placeholder="AAdhar card number" required>    
+                    </div>
+                  </div>
+       
+                  <div class="form-group">
+                      <label for="date_of_birth">Date of Birth:</label>
+                      <div class="col-md-10">          
+                        <input type="text" class="form-control" id="date_of_birth" placeholder="Enter date_of_birth" name="adhar_card_no">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="exp">Total Experience:</label>
+                      <div class="col-md-10">          
+                        <input type="text" class="form-control" id="experience" placeholder="Enter experience" name="experience">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                    <label  for="vehicle_name_and_number">Vehicle Name and Number:</label>
+                    <div class="col-md-10">          
+                      <input type="text" class="form-control" id="vehicle_name_and_number" placeholder="Enter vehicle number and name" name="vehicle_number_name">
+                    </div>
+                  </div>
+                    <div class="form-group">
+                        <div class="col-lg-10">    
+                        <label for="date_&_time">Days & Timings of Availability:</label>      
+                            <input type="text" class="form-control" id="date_and_time" placeholder="Enter date and time" name="date_and_time"> 
+                        </div>
+                    </div>
+            </div> 
+            <div class="col-lg-16">    
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
   </form>
 </div>
 </div>
-
-       </div>
+ </div>
     </body>
     </div>
 

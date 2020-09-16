@@ -24,14 +24,13 @@
                         <h4><b>Want to get your task done??CLICK HERE!!</b></h4>
                     </div>
              </div>
-             	<div class="col-sm-6">
+            <div class="col-sm-6">
                     <div class="img_section" style="height 80px">
                     <a href="{{ url('/tasker') }}"> <figure><img src="tasker.jpeg"></figure></a>
                         &nbsp;<h4><b>Are you good at your job? join us!CLICK HERE!!</b></h4>
                     </div>
-                 </div>   
-                       
-                </div>
+                 </div>              
+            </div>
             </div>
         </div>
     </body>

@@ -14,7 +14,7 @@ class OrderDetail extends Migration
     public function up()
     { Schema::create('order', function (Blueprint $table) {
         $table->increments('id');
-        $table->string('user_id')->unique();
+        $table->string('user_id');
         $table->string('name');
         $table->string('address1');
         $table->string('address2');

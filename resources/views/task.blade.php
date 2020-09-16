@@ -23,7 +23,7 @@
   @foreach($data as $d)
   <div class="column" style="border-color:black;border-size:3px">
                 <div class="img_section" style="height 80px">
-                      <a href="{{ url('/user') }}"><figure> <img class="card-img-top" src="{{ asset('/images/'.$d['image']) }}" alt="Card image cap"></figure></a>
+                      <a href="{!! route('detail', ['id'=>$d['id']]) !!}"><figure> <img class="card-img-top" src="{{ asset('/images/'.$d['image']) }}" alt="Card image cap"></figure></a>
                         <div class="well well-sm"> <h4><b>{{$d['task_name']}}</b></h4>
                             <div class="well well-sm"> <h4><b>{{$d['id']}}</b></h4>
                               <h3><b>{{$d['description']}}</b></h3>

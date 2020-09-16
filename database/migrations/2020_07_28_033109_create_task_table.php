@@ -19,6 +19,7 @@ class CreateTaskTable extends Migration
                 $table->string('task_name');
                 $table->string('description');
                 $table->string('image');
+                $table->integer('hourly_rate')->length(11);;
                 $table->timestamps();
             });
         }

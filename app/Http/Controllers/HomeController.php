@@ -7,10 +7,12 @@ use Illuminate\Http\Request;
 use Auth;
 use User;
 use App\Model\Task;
+use App\Model\Tasker;
 use App\Model\Order;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
+
 
 
 class HomeController extends Controller
@@ -59,7 +61,6 @@ class HomeController extends Controller
         return view('task',compact('data'));
     }
 
-   
     public function save_user(Request $request)
     {
         $user = Auth::user();
@@ -73,7 +74,7 @@ class HomeController extends Controller
             $order->phone_number = $request->phoneNumber;
             $order->save(); 
         
-            $data = DB::table('task')->get();
+        $data = Task::all()->toArray();
         return view('task',compact('data'))->with('success','your details are saved succesfully');
         }
        
@@ -84,9 +85,40 @@ class HomeController extends Controller
         return view('admin');
     }
 
+    public function add_tasker(Request $request){
+        $tasker = new Tasker;
+        $tasker->id = $request->id;
+        $tasker->name = $request->name;
+        $tasker->profession = $request->profession;
+        $tasker->contact_no = $request->contact_no;
+        $tasker->aadhar_card_no = $request->aadhar_card_no;
+        $tasker->experience = $request->experience;
+        $tasker->vehicle_number_name = $request->vehicle_number_name;
+        $tasker->date_and_time = $request->date_and_time;
+
+        $tasker->save();
+        return view('tasker')->with('success','your details are saved succesfully');
+    }
+
+    public function detail($id){
+        $i=preg_replace('/\D/', '', $id);
+        $userId = Auth::user()->id;
+        $task = new Task;
+        $detail = DB::table('task')->where('id', $id)->first();
+        $order = DB::table('order')->where('user_id',$userId)->get();
+        $order_count = $order->count();
+        if($order_count>1)
+        $discount = true;
+        else
+        $discount = false; 
+        $description = $detail->description;  
+        $hourly_rate = $detail->hourly_rate;
+             return view('taskDetail', compact('description','discount','hourly_rate'));
+    }
+
+
     public function upload_task(Request $request)
     {
-
         if($file = $request->file('file'))
         { 
             $name = $file->getClientOriginalName();
@@ -95,6 +127,7 @@ class HomeController extends Controller
                 $task = new Task;
                 $task->image = $name;
                 $task->task_name = $request->task_name;
+                $task->hourly_rate = $request->hourly_rate;
                 $task->description = $request->task_description;
                 $task->save();
 
