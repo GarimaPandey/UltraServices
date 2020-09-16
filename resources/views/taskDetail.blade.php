@@ -51,7 +51,7 @@
             </div>
             @else
             <div class="col-sm-8">
-            <label for="discount" class="col-sm-8 col-form-label"><h4><b>You will get a discount in your next purchase!!!</b></h4></label>
+            <label for="discount" class="col-sm-8 col-form-label"><h5><b>You will get a discount in your next purchase!!!</b></h5></label>
             </div>
             @endif
         </div>
@@ -60,10 +60,8 @@
             <label for="total_cost" class="col-sm-3 col-form-label">Total Cost</label>
             <div class="col-sm-6">
             <input name="total_cost" type="text" class="form-control" id="total_cost" placeholder="Total Cost" required>
-
             </div>
         </div>
-
         <div class="form-group row">
             <div class="offset-sm-3 col-sm-9">
                 <button type="submit" class="btn btn-primary">Proceed to pay</button>
