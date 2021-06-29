@@ -20,7 +20,8 @@ class OrderDetail extends Migration
         $table->string('address2');
         $table->string('address3');
         $table->string('phone_number');
-
+        $table->string('task_completed');
+        $table->string('payment_recieved');
         $table->rememberToken();
         $table->timestamps();
     });

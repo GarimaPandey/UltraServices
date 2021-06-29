@@ -85,6 +85,12 @@ class HomeController extends Controller
         return view('admin');
     }
 
+    public function admin_home()
+    {
+        $order = Order::all()->toArray();
+        return view('admin_home',compact('order'));
+    }
+
     public function add_tasker(Request $request){
         $tasker = new Tasker;
         $tasker->id = $request->id;

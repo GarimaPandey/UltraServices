@@ -59,8 +59,7 @@
         <div class="form-group row">
             <label for="total_cost" class="col-sm-3 col-form-label">Total Cost</label>
             <div class="col-sm-6">
-            <input name="total_cost" type="text" class="form-control" id="total_cost" placeholder="Total Cost" required>
-            </div>
+            <p>Total is: <span class="total"></span> 
         </div>
         <div class="form-group row">
             <div class="offset-sm-3 col-sm-9">
@@ -76,3 +75,10 @@
 </body>
 </html>
 
+<script>
+$("#inputs").on("keyup", function(){
+  let val1 = $("#inputs input:nth-child(1)").val();
+  let val2 = $("#inputs input:nth-child(2)").val();
+  $("input[type='text']").val(val1 * val2);
+})
+</script>

@@ -19,12 +19,8 @@ Route::get('/', function () {
 
 
 Auth::routes();
-
-Route::get('/order', function(){
-
-    $results = \App\Order::all();
-    return $order;
-});
+Route::get('/admin_home', 'HomeController@admin_home');
+Route::get('/admin', 'HomeController@admin');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/user', 'HomeController@user')->name('user');
 Route::post('/save_user', 'HomeController@save_user');
@@ -37,5 +33,6 @@ Route::post('/addTasker','HomeController@add_tasker');
 $router->get('/taskDetail/{id}',[
     'uses' => 'HomeController@detail',
     'as'   => 'detail'
-]);Route::get('/admin', 'HomeController@admin');
+]);
+
 

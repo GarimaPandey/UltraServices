@@ -18,6 +18,8 @@ class Order extends Model
         'address2',
         'address3',
         'phone_number',
+        'task_completed',
+        'payment_recieved',
         'remember_token',
         'created_at',
         'updated_at',
